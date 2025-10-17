@@ -1,0 +1,40 @@
+{
+  "branches": ["main"],
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    [
+      "@semantic-release/changelog",
+      {
+        "changelogFile": "CHANGELOG.md"
+      }
+    ],
+    [
+      "@semantic-release/exec",
+      {
+        "prepareCmd": "sed -i 's/^\\t\"Version\": \".*\"/\\t\"Version\": \"${nextRelease.version}\"/' com.gearsdigital.betterstopwatch.sdPlugin/manifest.json && npx @elgato/cli pack com.gearsdigital.betterstopwatch.sdPlugin --no-update-check --force"
+      }
+    ],
+    [
+      "@semantic-release/git",
+      {
+        "assets": [
+          "CHANGELOG.md",
+          "com.gearsdigital.betterstopwatch.sdPlugin/manifest.json"
+        ],
+        "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+      }
+    ],
+    [
+      "@semantic-release/github",
+      {
+        "assets": [
+          {
+            "path": "com.gearsdigital.betterstopwatch.streamDeckPlugin",
+            "label": "Stream Deck Plugin (v${nextRelease.version})"
+          }
+        ]
+      }
+    ]
+  ]
+}

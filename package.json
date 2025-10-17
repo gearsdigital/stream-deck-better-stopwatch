@@ -1,0 +1,35 @@
+{
+    "name": "better-stopwatch",
+    "version": "0.1.0",
+    "description": "An enhanced Stream Deck stopwatch plugin with start/stop and reset functionality",
+    "author": "Steffen Giers",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/gearsdigital/stream-deck-better-stopwatch.git"
+    },
+    "scripts": {
+        "build": "rollup -c",
+        "watch": "rollup -c -w --watch.onEnd=\"streamdeck restart com.gearsdigital.betterstopwatch\""
+    },
+    "type": "module",
+    "devDependencies": {
+        "@elgato/cli": "^1.5.0",
+        "@rollup/plugin-commonjs": "^28.0.0",
+        "@rollup/plugin-node-resolve": "^15.2.2",
+        "@rollup/plugin-terser": "^0.4.4",
+        "@rollup/plugin-typescript": "^12.1.0",
+        "@semantic-release/changelog": "^6.0.3",
+        "@semantic-release/exec": "^6.0.3",
+        "@semantic-release/git": "^10.0.1",
+        "@tsconfig/node20": "^20.1.2",
+        "@types/node": "~20.15.0",
+        "rollup": "^4.0.2",
+        "semantic-release": "^22.0.0",
+        "tslib": "^2.6.2",
+        "typescript": "^5.2.2"
+    },
+    "dependencies": {
+        "@elgato/streamdeck": "^1.0.0"
+    }
+}

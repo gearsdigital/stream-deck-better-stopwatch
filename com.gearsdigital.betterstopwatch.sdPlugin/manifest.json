@@ -1,0 +1,46 @@
+{
+	"Name": "Better Stopwatch",
+	"Version": "1.0.4.0",
+	"Author": "Steffen Giers",
+	"Actions": [
+		{
+			"Name": "Better Stopwatch",
+			"UUID": "com.gearsdigital.betterstopwatch",
+			"Icon": "imgs/actions/counter/icon",
+			"Tooltip": "A stopwatch timer. Short press to start/stop, long press to reset to initial state.",
+			"PropertyInspectorPath": "ui/increment-counter.html",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/counter/key"
+				}
+			]
+		}
+	],
+	"Category": "Better Stopwatch",
+	"CategoryIcon": "imgs/plugin/category-icon",
+	"CodePath": "bin/plugin.js",
+	"Description": "An enhanced stopwatch with start/stop and reset functionality. Each key runs independently.",
+	"Icon": "imgs/plugin/marketplace",
+	"SDKVersion": 2,
+	"Software": {
+		"MinimumVersion": "6.5"
+	},
+	"OS": [
+		{
+			"Platform": "mac",
+			"MinimumVersion": "12"
+		},
+		{
+			"Platform": "windows",
+			"MinimumVersion": "10"
+		}
+	],
+	"Nodejs": {
+		"Version": "20",
+		"Debug": "enabled"
+	},
+	"UUID": "com.gearsdigital.betterstopwatch"
+}
